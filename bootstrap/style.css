@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  padding: 20px 40px;
+  font-size: 30px;
+  border-radius: 43px;
+  background-color: black;
+  color: red;
+  border: none;
+  cursor: pointer;
+}
+button:hover{
+  background-image : linear-gradient(to right, red, blue);
+}
