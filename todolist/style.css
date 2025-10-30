@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #61988e, #493843);
+}
+
+.container{
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container h1{
+    margin-bottom: 20px;
+    color: #493843;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #a0b2a6;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #61988e;
+}
+
+.input-box button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #61988e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.input-box button:hover {
+    background-color: #493843;
+}
+
+ul {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li {
+    background: #eabda8;
+    color: #493843;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+    width: 90%;
+}
+
+/* ul li:hover {
+    transform: scale(1.1);
+} */
+
+/* Delete button */
+ul li span {
+    cursor: pointer;
+    font-weight: bold;
+    color: #493843;
+}
+
+ul li span:hover {
+    color: #a00000 !important;
+}
+
+.error{
+    color: rgb(247, 15, 15);
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(1);
+    transition: color 0.5s ease-in-out;
+}
+
+.error.show{
+    animation: beep 1s ease-in-out infinite alternate;
+    opacity: 1;
+}
+
+@keyframes beep{
+    0% {
+        transform: scale(1);
+        color: blue;
+    }
+    25% {
+        transform: scale(1.1);
+        color: rgb(247, 15, 15);
+    }
+    50% {
+        transform: scale(0.9);
+        color: blue;
+    }
+    75% {
+        transform: scale(1.1);
+        color: rgb(247, 15, 15);
+    }
+    100% {
+        transform: scale(1);
+        color: blue;
+    }
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.fade{
+    animation-name: ani;
+    animation-duration: 800ms;
+}
+
+@keyframes ani{
+    20%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+
