@@ -1,0 +1,11 @@
+{
+  "name": "London",
+  "sys": { "country": "GB" },
+  "main": {
+    "temp": 15.3,
+    "humidity": 67
+  },
+  "weather": [
+    { "description": "light rain", "icon": "10d" }
+  ]
+}
