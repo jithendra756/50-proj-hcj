@@ -26,11 +26,24 @@ const setUpFocusShifts=(current, target)=>{
         {
             if(current==btn){
                 btn.style.opacity=1;
+                btn.style.transform = "scale(1)";                
+                btn.style.transition = "transform 0.2s";
             }
             e.preventDefault();
+            if(current!=btn){
+                current.style.transform= "scale(1.0)";
+                current.style.transition= "transform 0.2s";
+            }
             target.focus();
+            if(target!=btn){
+                target.style.transform= "scale(1.1)";
+                target.style.transition= "transform 0.2s";
+            }
+
             if(target==btn){
                 btn.style.opacity=0.6;
+                btn.style.transform = "scale(1.05)";
+                btn.style.transition = "transform 0.2s";
             }
         }
         
@@ -42,6 +55,10 @@ const changeColor = ()=>{
     const g = greenInput.value;
     const b = blueInput.value;
 
+    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+        alert("Please enter RGB values between 0 and 255");
+        return;
+    }
     if(r!="" && g!="" && b!=""){
         body.style.backgroundColor = `rgb(${r},${g},${b})`;
     }else{
@@ -53,10 +70,15 @@ const changeColor = ()=>{
     // redInput.focus();
 }
 
-setUpFocusShifts(redInput, greenInput);
-setUpFocusShifts(greenInput, blueInput);
-setUpFocusShifts(blueInput, btn);
-setUpFocusShifts(btn,redInput);
+
+const elements = [redInput, greenInput, blueInput, btn];
+elements.forEach((e,i) => {
+    setUpFocusShifts(e,elements[(i+1) % elements.length])
+});
+// setUpFocusShifts(redInput, greenInput);
+// setUpFocusShifts(greenInput, blueInput);
+// setUpFocusShifts(blueInput, btn);
+// setUpFocusShifts(btn,redInput);
 
 
 btn.addEventListener("click",changeColor);
