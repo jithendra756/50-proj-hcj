@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, #61988e, #493843);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-container{
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    width: 80%;
+    max-width: 900px;
+    transition: transform 0.3s ease;
+}
+
+.product-container:hover {
+  transform: scale(1.01);
+}
+
+.image-section{
+    width: 250px;
+    background: linear-gradient(110deg, rgba(128, 128, 128, 0.792), rgba(0, 0, 0, 0.774));
+    border-radius: 5px;
+    margin: 10px 10px;
+    box-shadow: 3px 3px 20px grey;
+}
+
+.image-section:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+img{
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+}
+
+.details-section {
+  flex: 1;
+  color: #493843;
+}
+
+.product-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.product-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.price {
+  color: #61988e;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart {
+  background: #eabda8;
+  color: #493843;
+}
+
+.buy-now {
+  background: #61988e;
+  color: #fff;
+}
+
+.buy-now:hover {
+  background: #493843;
+}
+
+.cart-msg {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #61988e;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+}
+
+.cart-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
