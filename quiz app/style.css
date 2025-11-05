@@ -132,7 +132,7 @@ body{
     display: flex;
     gap: 1rem;
     color: rgb(38, 1, 75);
-    transition: transform 0.2s ease;
+    /* transition: transform 0.2s ease; */
 }
 
 .on{
@@ -159,6 +159,25 @@ body{
     cursor: pointer;
 }
 
+/* When an option is selected */
+.o1.selected .on {
+  transform: scale(1.1);
+  background-color: #f98092;
+  border: 2px solid rgb(51, 2, 100);
+}
+
+.o1.selected .option {
+  transform: scale(1.05);
+  border: 2px solid rgb(51, 2, 100);
+  background-color: #fdb2c3;
+}
+
+/* Hover only works when not selected */
+.o1:not(.selected):hover .on,
+.o1:not(.selected):hover .option {
+  transform: scale(1.06);
+}
+
 .prevnext{
     border-radius: 3rem;
     /* background-color: #f98092; */
@@ -169,7 +188,7 @@ body{
     align-items: center;
 }
 
-.prev, .next{
+.pns{
     width: 6rem;
     height: 2rem;
     font-size: large;
@@ -183,7 +202,7 @@ body{
     color: rgb(38, 1, 75);
 }
 
-.prev:hover , .next:hover{
+.pns:hover{
     border: 2px solid  rgb(51, 2, 100);
     transform: scale(1.07);
     background-color: #f87c8e;
@@ -235,15 +254,22 @@ body{
     border: 2px solid rgb(51, 2, 100);
 }
 
-.progress-bar{
-    /* position: absolute; */
-    /* bottom: 1rem;
-    left: 5%; */
-    background: linear-gradient(90deg,#f8acd2, #FF69B4);
-    width: 85%;
-    height: 1%;
-    border-radius: 3rem;
-    border: 1px solid rgb(51, 2, 100);
-    box-shadow: 0px 0px 20px 1px grey;
+.progress-container {
+  width: 85%;
+  height: 10px;
+  background-color: #fca0ae;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: 1px solid rgb(51, 2, 100);
+  box-shadow: 0px 0px 20px 1px grey;
+  margin: 10px auto;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #f8acd2, #FF69B4);
+  border-radius: 3rem;
+  transition: width 0.4s ease;
 }
 
